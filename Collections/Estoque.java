@@ -21,38 +21,50 @@ public class Estoque {
 		produtos.add("Arroz");
 		produtos.add("Feijão");
 
-		try{
-			System.out.println("Lista de produtos"+ produtos+"\n Retirando o Produto Arroz:");
-
-
-			for(String nome:produtos) {
-				if(nome=="Arroz") {
-					produtos.remove("Arroz");
+		do {
+			
+			System.out.println("Digite uma opção: \n(1) Adicionar item \n(2) Remover item \n(3) Atualizar estoque \n(4) Visualizar estoque");
+			opcao=ler.nextInt();
+			
+			switch(opcao) {
+				case 1:
+					System.out.println("Digite o nome do produto a ser adicionado: ");
+					String produto=ler.next();
+					produtos.add(produto);
+					break;
+				case 2:
+					System.out.println("Digite o nome do produto a ser removido: ");
+					String produto2=ler.next();
+					produtos.remove(produto2);
+					break;
+					
+				case 3:
+					System.out.println("Digite o produto a ser substituído: ");
+					String sub=ler.next();
+					System.out.println("Digite o produto que entrará: ");
+					String novo=ler.next();
+					
+				if(produtos.contains(sub)) {
+					produtos.remove(sub);
+					produtos.add(novo);
 				}
+				System.out.println(produtos);
+				break;
+				
+				
+				case 4:
+					System.out.println("Lista de produtos:  "+produtos);
+				default:
+					System.out.println("Obrigado!");	
+					
+					
+					
 			}
-			System.out.println("Lista de produtos"+ produtos);
-		}catch (Error e) {
-			System.out.println("Erro");
-		}
-		System.out.println("Deseja adicionar algo à lista?: (1) Sim (2) Não");
-		opcao= ler.nextInt();
-
-		if(opcao==1) {
-			System.out.println("Digite o nome do produto a ser inserido: ");
-			novoProduto= ler.next();
-			produtos.add(novoProduto);
-
-			for(String name : produtos) {
-				System.out.println("Nova lista de produtos: "+ name);	
-			}
-
-
-		}if(opcao==2) {
-			for(String name : produtos) {
-				System.out.println("Lista de produtos: "+ name);	
-			}
-		}
-
-
+			
+			
+		}while(opcao!=0);
+		
+		
 	}
+	
 }
