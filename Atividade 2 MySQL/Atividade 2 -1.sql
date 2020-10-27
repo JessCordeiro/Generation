@@ -35,7 +35,7 @@ insert into tb_funcionarios (nome, cargo, contrato,salario) values ("Matheus","A
 insert into tb_funcionarios (nome, cargo, contrato,salario) values ("Joaquim","Assistente",true,12000.00);
 insert into tb_funcionarios (nome, cargo, contrato,salario) values ("Guilherme","Analista",true,12000.00);
 
-select * from tb_funcionarios where salario>2000.00;
+
 select * from tb_funcionarios where salario>2000.00;
 select * from tb_funcionarios where salario between 1000.00 AND 2000.00;
 select * from tb_funcionarios where nome like "C%";
